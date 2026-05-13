@@ -5,81 +5,318 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suporte — Reformei</title>
     <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 32px 24px;
             color: #1c1c1e;
             line-height: 1.7;
-            background: #fff;
-        }
-        h1 { font-size: 28px; margin-bottom: 4px; }
-        h2 { font-size: 18px; margin-top: 36px; margin-bottom: 8px; color: #1c1c1e; }
-        p, li { font-size: 15px; color: #3a3a3c; }
-        ul { padding-left: 20px; }
-        .subtitle { color: #6c6c70; font-size: 14px; margin-bottom: 40px; }
-        a { color: #007aff; text-decoration: none; }
-        hr { border: none; border-top: 1px solid #e5e5ea; margin: 40px 0; }
-        .card {
             background: #f2f2f7;
-            border-radius: 12px;
-            padding: 20px 24px;
-            margin-top: 16px;
         }
-        .card p { margin: 0; }
+
+        /* ── HEADER ── */
+        .page-header {
+            background: linear-gradient(135deg, #F5A800 0%, #D4890A 100%);
+            padding: 56px 24px 48px;
+            text-align: center;
+        }
+
+        .header-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 72px;
+            height: 72px;
+            background: rgba(0,0,0,0.12);
+            border-radius: 20px;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .header-app-name {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(0,0,0,0.55);
+            margin-bottom: 8px;
+        }
+
+        .header-title {
+            font-size: 30px;
+            font-weight: 800;
+            color: #1c1c1e;
+            letter-spacing: -0.5px;
+        }
+
+        .header-subtitle {
+            font-size: 14px;
+            color: rgba(0,0,0,0.5);
+            margin-top: 8px;
+        }
+
+        /* ── CONTENT ── */
+        .content {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 40px 24px 64px;
+        }
+
+        .intro {
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 32px;
+            font-size: 15px;
+            color: #d4d4d6;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+
+        /* Contact card */
+        .contact-card {
+            background: linear-gradient(135deg, #F5A800 0%, #D4890A 100%);
+            border-radius: 16px;
+            padding: 28px 24px;
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .contact-card-icon {
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+
+        .contact-card-info p {
+            font-size: 13px;
+            color: rgba(0,0,0,0.55);
+            margin-bottom: 2px;
+        }
+
+        .contact-card-info a {
+            font-size: 17px;
+            font-weight: 700;
+            color: #1c1c1e;
+            text-decoration: none;
+        }
+
+        .contact-card-info a:hover { text-decoration: underline; }
+
+        .response-time {
+            font-size: 12px;
+            color: rgba(0,0,0,0.45);
+            margin-top: 4px;
+        }
+
+        h2 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #1c1c1e;
+            margin: 32px 0 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background: #F5A800;
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        /* FAQ */
+        .faq-section-label {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #F5A800;
+            margin: 40px 0 12px;
+        }
+
+        .faq-item {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px 24px;
+            margin-bottom: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+
+        .faq-question {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1c1c1e;
+            margin-bottom: 10px;
+        }
+
+        p, li {
+            font-size: 15px;
+            color: #3a3a3c;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+
+        li { margin-bottom: 4px; }
+
+        a { color: #F5A800; text-decoration: none; font-weight: 600; }
+        a:hover { text-decoration: underline; }
+
+        .section-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px 24px;
+            margin-top: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: #1c1c1e;
+            color: #aeaeb2;
+            text-align: center;
+            padding: 32px 24px;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .footer-logo {
+            font-size: 20px;
+            font-weight: 800;
+            color: #F5A800;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+        }
+
+        .footer-links {
+            margin: 12px 0;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #aeaeb2;
+            font-weight: 500;
+            font-size: 13px;
+        }
+
+        .footer-links a:hover { color: #F5A800; text-decoration: none; }
+
+        .footer-divider {
+            width: 120px;
+            height: 2px;
+            background: #F5A800;
+            border-radius: 1px;
+            margin: 16px auto;
+        }
+
+        .footer-copy { color: #636366; font-size: 12px; }
+
+        /* ── DARK MODE ── */
+        @media (prefers-color-scheme: dark) {
+            body { background: #1c1c1e; color: #f2f2f7; }
+            .intro, .section-card, .faq-item { background: #2c2c2e; box-shadow: none; }
+            h2 { color: #f2f2f7; }
+            .faq-question { color: #f2f2f7; }
+            p, li { color: #aeaeb2; }
+            .header-app-name { color: rgba(0,0,0,0.6); }
+            .header-subtitle { color: rgba(0,0,0,0.55); }
+        }
     </style>
 </head>
 <body>
 
-    <h1>Suporte</h1>
-    <p class="subtitle">Reformei &mdash; Estamos aqui para ajudar</p>
+    <header class="page-header">
+        <div class="header-badge">🛠️</div>
+        <div class="header-app-name">Reformei</div>
+        <h1 class="header-title">Central de Suporte</h1>
+        <p class="header-subtitle">Estamos aqui para ajudar</p>
+    </header>
 
-    <p>Se você tiver dúvidas, encontrar algum problema ou quiser enviar uma sugestão, entre em contato com a gente. Respondemos todos os e-mails em até 2 dias úteis.</p>
+    <div class="content">
 
-    <h2>Contato</h2>
-    <div class="card">
-        <p><strong>E-mail:</strong> <a href="mailto:adm.crispcode@gmail.com">adm.crispcode@gmail.com</a></p>
+        <div class="intro">
+            Se você tiver dúvidas, encontrar algum problema ou quiser enviar uma sugestão, entre em contato com a gente. Respondemos todos os e-mails em até 2 dias úteis.
+        </div>
+
+        <h2>Fale conosco</h2>
+        <div class="contact-card">
+            <div class="contact-card-icon">✉️</div>
+            <div class="contact-card-info">
+                <p>E-mail de suporte</p>
+                <a href="mailto:adm.crispcode@gmail.com">adm.crispcode@gmail.com</a>
+                <p class="response-time">Resposta em até 2 dias úteis</p>
+            </div>
+        </div>
+
+        <p class="faq-section-label">Perguntas frequentes</p>
+
+        <div class="faq-item">
+            <p class="faq-question">Como sincronizar dados entre dispositivos?</p>
+            <p>O Reformei sincroniza automaticamente via iCloud. Certifique-se de que:</p>
+            <ul>
+                <li>Você está conectado com a mesma conta Apple ID nos dois dispositivos</li>
+                <li>O iCloud está ativado em Ajustes → [seu nome] → iCloud</li>
+                <li>Você tem conexão com a internet</li>
+            </ul>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-question">Como cancelar minha assinatura Premium?</p>
+            <p>As assinaturas são gerenciadas pela Apple. Para cancelar:</p>
+            <ul>
+                <li>Ajustes → [seu nome] → Assinaturas</li>
+                <li>Selecione <strong>Reformei Premium</strong> e toque em Cancelar Assinatura</li>
+            </ul>
+            <p>O acesso Premium permanece ativo até o fim do período já pago.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-question">Como restaurar minha compra em um novo dispositivo?</p>
+            <p>Abra o Reformei, acesse o Paywall e toque em <strong>"Restaurar compras anteriores"</strong>. Sua assinatura será reconhecida automaticamente se estiver ativa na mesma conta Apple ID.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-question">Perdi meus dados. Como recuperar?</p>
+            <p>Os dados são sincronizados com o iCloud. Se os dados sumirem:</p>
+            <ul>
+                <li>Verifique se está logado com a mesma conta Apple ID</li>
+                <li>Aguarde alguns minutos — a sincronização pode ter um pequeno delay</li>
+                <li>Acesse Ajustes → [seu nome] → iCloud → Gerenciar Armazenamento e verifique se o Reformei aparece na lista</li>
+            </ul>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-question">Como excluir meus dados permanentemente?</p>
+            <p>Para remover todos os seus dados do Reformei:</p>
+            <ul>
+                <li>Exclua o aplicativo do dispositivo (remove os dados locais)</li>
+                <li>Acesse <a href="https://icloud.com" target="_blank">icloud.com</a> → Configurações → Gerenciar Armazenamento → Reformei → Excluir dados</li>
+            </ul>
+        </div>
+
     </div>
 
-    <h2>Perguntas frequentes</h2>
-
-    <h2>Como sincronizar dados entre dispositivos?</h2>
-    <p>O Reformei sincroniza automaticamente via iCloud. Certifique-se de que:</p>
-    <ul>
-        <li>Você está conectado com a mesma conta Apple ID nos dois dispositivos</li>
-        <li>O iCloud está ativado em Ajustes → [seu nome] → iCloud</li>
-        <li>Você tem conexão com a internet</li>
-    </ul>
-
-    <h2>Como cancelar minha assinatura Premium?</h2>
-    <p>As assinaturas são gerenciadas pela Apple. Para cancelar:</p>
-    <ul>
-        <li>Ajustes → [seu nome] → Assinaturas</li>
-        <li>Selecione <strong>Reformei Premium</strong> e toque em Cancelar Assinatura</li>
-    </ul>
-    <p>O acesso Premium permanece ativo até o fim do período já pago.</p>
-
-    <h2>Como restaurar minha compra em um novo dispositivo?</h2>
-    <p>Abra o Reformei, acesse o Paywall e toque em <strong>"Restaurar compras anteriores"</strong>. Sua assinatura será reconhecida automaticamente se estiver ativa na mesma conta Apple ID.</p>
-
-    <h2>Perdi meus dados, como recuperar?</h2>
-    <p>Os dados são sincronizados com o iCloud. Se os dados sumirem:</p>
-    <ul>
-        <li>Verifique se está logado com a mesma conta Apple ID</li>
-        <li>Aguarde alguns minutos — a sincronização pode ter um pequeno delay</li>
-        <li>Acesse Ajustes → [seu nome] → iCloud → Gerenciar Armazenamento e verifique se o Reformei aparece na lista</li>
-    </ul>
-
-    <h2>Como excluir meus dados permanentemente?</h2>
-    <p>Para remover todos os seus dados do Reformei:</p>
-    <ul>
-        <li>Exclua o aplicativo do dispositivo (remove os dados locais)</li>
-        <li>Acesse <a href="https://icloud.com" target="_blank">icloud.com</a> → Configurações → Gerenciar Armazenamento → Reformei → Excluir dados</li>
-    </ul>
-
-    <hr>
-    <p style="font-size: 13px; color: #8e8e93;">© 2026 crispcode. Todos os direitos reservados. &mdash; <a href="PrivacyPolicy.html">Política de Privacidade</a></p>
+    <footer>
+        <div class="footer-logo">Reformei</div>
+        <p>Gerencie suas obras com tranquilidade.</p>
+        <div class="footer-links">
+            <a href="https://scrispim.github.io/crispcode-legal/ReformeiPrivacyPolicy.html">Política de Privacidade</a>
+            <a href="https://scrispim.github.io/crispcode-legal/ReformeiSupport.html">Suporte</a>
+            <a href="mailto:adm.crispcode@gmail.com">Contato</a>
+        </div>
+        <div class="footer-divider"></div>
+        <p class="footer-copy">© 2026 crispcode · Todos os direitos reservados</p>
+    </footer>
 
 </body>
 </html>
