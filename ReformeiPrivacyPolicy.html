@@ -5,94 +5,286 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Política de Privacidade — Reformei</title>
     <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 32px 24px;
             color: #1c1c1e;
             line-height: 1.7;
-            background: #fff;
+            background: #f2f2f7;
         }
-        h1 { font-size: 28px; margin-bottom: 4px; }
-        h2 { font-size: 18px; margin-top: 36px; margin-bottom: 8px; color: #1c1c1e; }
-        p, li { font-size: 15px; color: #3a3a3c; }
-        ul { padding-left: 20px; }
-        .subtitle { color: #6c6c70; font-size: 14px; margin-bottom: 40px; }
-        a { color: #007aff; text-decoration: none; }
-        hr { border: none; border-top: 1px solid #e5e5ea; margin: 40px 0; }
+
+        /* ── HEADER ── */
+        .page-header {
+            background: linear-gradient(135deg, #F5A800 0%, #D4890A 100%);
+            padding: 56px 24px 48px;
+            text-align: center;
+        }
+
+        .header-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 72px;
+            height: 72px;
+            background: rgba(0,0,0,0.12);
+            border-radius: 20px;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .header-app-name {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(0,0,0,0.55);
+            margin-bottom: 8px;
+        }
+
+        .header-title {
+            font-size: 30px;
+            font-weight: 800;
+            color: #1c1c1e;
+            letter-spacing: -0.5px;
+        }
+
+        .header-subtitle {
+            font-size: 14px;
+            color: rgba(0,0,0,0.5);
+            margin-top: 8px;
+        }
+
+        /* ── CONTENT ── */
+        .content {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 40px 24px 64px;
+        }
+
+        .intro {
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 32px;
+            font-size: 15px;
+            color: #d4d4d6;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+
+        h2 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #1c1c1e;
+            margin: 32px 0 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background: #F5A800;
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        p, li {
+            font-size: 15px;
+            color: #3a3a3c;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+
+        li { margin-bottom: 4px; }
+
+        a { color: #F5A800; text-decoration: none; font-weight: 600; }
+        a:hover { text-decoration: underline; }
+
+        .section-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px 24px;
+            margin-top: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+
+        .section-card p, .section-card li { margin-top: 6px; }
+
+        /* ── FOOTER ── */
+        footer {
+            background: #1c1c1e;
+            color: #aeaeb2;
+            text-align: center;
+            padding: 32px 24px;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .footer-logo {
+            font-size: 20px;
+            font-weight: 800;
+            color: #F5A800;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+        }
+
+        .footer-links {
+            margin: 12px 0;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #aeaeb2;
+            font-weight: 500;
+            font-size: 13px;
+        }
+
+        .footer-links a:hover { color: #F5A800; text-decoration: none; }
+
+        .footer-divider {
+            width: 120px;
+            height: 2px;
+            background: #F5A800;
+            border-radius: 1px;
+            margin: 16px auto;
+        }
+
+        .footer-copy { color: #636366; font-size: 12px; }
+
+        /* ── DARK MODE ── */
+        @media (prefers-color-scheme: dark) {
+            body { background: #1c1c1e; color: #f2f2f7; }
+            .intro, .section-card { background: #2c2c2e; box-shadow: none; }
+            h2 { color: #f2f2f7; }
+            p, li { color: #aeaeb2; }
+            .header-app-name { color: rgba(0,0,0,0.6); }
+            .header-subtitle { color: rgba(0,0,0,0.55); }
+        }
     </style>
 </head>
 <body>
 
-    <h1>Política de Privacidade</h1>
-    <p class="subtitle">Reformei &mdash; Última atualização: maio de 2026</p>
+    <header class="page-header">
+        <div class="header-badge">🔒</div>
+        <div class="header-app-name">Reformei</div>
+        <h1 class="header-title">Política de Privacidade</h1>
+        <p class="header-subtitle">Última atualização: maio de 2026</p>
+    </header>
 
-    <p>Esta Política de Privacidade descreve como o aplicativo <strong>Reformei</strong>, desenvolvido por <strong>Sander Crispim (crispcode)</strong>, coleta, usa e protege as informações dos usuários.</p>
+    <div class="content">
 
-    <h2>1. Informações que você fornece</h2>
-    <p>O Reformei armazena exclusivamente os dados que você mesmo cadastra no aplicativo, incluindo:</p>
-    <ul>
-        <li>Informações sobre obras e reformas (título, endereço, status, valores, datas)</li>
-        <li>Dados de prestadores de serviço (nome, telefone, e-mail, especialidade)</li>
-        <li>Listas de materiais e compras</li>
-        <li>Etapas e cronograma da obra</li>
-        <li>Eventos e registros de progresso</li>
-        <li>Fotos e documentos (contratos em PDF, fotos de notas fiscais, fotos da obra)</li>
-        <li>Notas e anotações</li>
-    </ul>
-    <p>Esses dados são armazenados localmente no seu dispositivo e sincronizados com a sua conta iCloud particular, conforme descrito abaixo.</p>
+        <div class="intro">
+            Esta Política de Privacidade descreve como o aplicativo <strong>Reformei</strong>, desenvolvido por <strong>Sander Crispim (crispcode)</strong>, coleta, usa e protege as informações dos usuários.
+        </div>
 
-    <h2>2. Sincronização via iCloud (CloudKit)</h2>
-    <p>O Reformei utiliza o <strong>CloudKit</strong> da Apple para sincronizar seus dados entre os dispositivos vinculados à sua conta iCloud. Seus dados são armazenados no banco de dados privado do CloudKit, acessível apenas por você. A crispcode não tem acesso aos dados armazenados no seu iCloud. Para saber mais sobre como a Apple gerencia esses dados, consulte a <a href="https://www.apple.com/legal/privacy/pt-br/" target="_blank">Política de Privacidade da Apple</a>.</p>
+        <h2>1. Informações que você fornece</h2>
+        <div class="section-card">
+            <p>O Reformei armazena exclusivamente os dados que você mesmo cadastra no aplicativo, incluindo:</p>
+            <ul>
+                <li>Informações sobre obras e reformas (título, endereço, status, valores, datas)</li>
+                <li>Dados de prestadores de serviço (nome, telefone, e-mail, especialidade)</li>
+                <li>Listas de materiais e compras</li>
+                <li>Etapas e cronograma da obra</li>
+                <li>Eventos e registros de progresso</li>
+                <li>Fotos e documentos (contratos em PDF, fotos de notas fiscais, fotos da obra)</li>
+                <li>Notas e anotações</li>
+            </ul>
+            <p>Esses dados são armazenados localmente no seu dispositivo e sincronizados com a sua conta iCloud particular.</p>
+        </div>
 
-    <h2>3. Login com Apple (Sign in with Apple)</h2>
-    <p>O Reformei oferece a opção de autenticação via <strong>Sign in with Apple</strong>. Ao utilizar esse recurso, a Apple pode compartilhar com o app apenas o identificador único do usuário e, opcionalmente, um endereço de e-mail. Nenhuma informação pessoal adicional é acessada ou armazenada pela crispcode.</p>
+        <h2>2. Sincronização via iCloud (CloudKit)</h2>
+        <div class="section-card">
+            <p>O Reformei utiliza o <strong>CloudKit</strong> da Apple para sincronizar seus dados entre os dispositivos vinculados à sua conta iCloud. Seus dados são armazenados no banco de dados privado do CloudKit, acessível apenas por você. A crispcode não tem acesso aos dados armazenados no seu iCloud. Para saber mais, consulte a <a href="https://www.apple.com/legal/privacy/pt-br/" target="_blank">Política de Privacidade da Apple</a>.</p>
+        </div>
 
-    <h2>4. Análise de uso (Firebase Analytics)</h2>
-    <p>O aplicativo utiliza o <strong>Firebase Analytics</strong> (Google) para coletar dados anônimos sobre o uso do app, como:</p>
-    <ul>
-        <li>Telas visitadas e funcionalidades utilizadas</li>
-        <li>Eventos de interação (ex.: criação de obras, visualização do paywall)</li>
-        <li>Informações do dispositivo (modelo, versão do iOS, idioma)</li>
-    </ul>
-    <p>Esses dados são coletados de forma anônima e agregada, sem identificação pessoal, e são usados exclusivamente para melhorar o aplicativo. Para saber mais, consulte a <a href="https://firebase.google.com/support/privacy" target="_blank">Política de Privacidade do Firebase</a>.</p>
+        <h2>3. Login com Apple (Sign in with Apple)</h2>
+        <div class="section-card">
+            <p>O Reformei oferece a opção de autenticação via <strong>Sign in with Apple</strong>. Ao utilizar esse recurso, a Apple pode compartilhar com o app apenas o identificador único do usuário e, opcionalmente, um endereço de e-mail. Nenhuma informação pessoal adicional é acessada ou armazenada pela crispcode.</p>
+        </div>
 
-    <h2>5. Relatórios de falhas (Firebase Crashlytics)</h2>
-    <p>O aplicativo utiliza o <strong>Firebase Crashlytics</strong> para identificar e corrigir falhas técnicas. Em caso de crash, são enviados automaticamente dados técnicos sobre o erro (como stack trace e versão do app), sem qualquer informação pessoal ou de obras cadastradas.</p>
+        <h2>4. Análise de uso (Firebase Analytics)</h2>
+        <div class="section-card">
+            <p>O aplicativo utiliza o <strong>Firebase Analytics</strong> (Google) para coletar dados anônimos sobre o uso do app, como:</p>
+            <ul>
+                <li>Telas visitadas e funcionalidades utilizadas</li>
+                <li>Eventos de interação (ex.: criação de obras, visualização do paywall)</li>
+                <li>Informações do dispositivo (modelo, versão do iOS, idioma)</li>
+            </ul>
+            <p>Esses dados são coletados de forma anônima e agregada, sem identificação pessoal, e são usados exclusivamente para melhorar o aplicativo. Consulte a <a href="https://firebase.google.com/support/privacy" target="_blank">Política de Privacidade do Firebase</a>.</p>
+        </div>
 
-    <h2>6. Compras dentro do aplicativo</h2>
-    <p>O Reformei oferece assinaturas premium processadas diretamente pela <strong>Apple App Store</strong>. Nenhum dado de pagamento ou cartão de crédito é acessado ou armazenado pelo app. Todas as transações são gerenciadas pela Apple. Para mais informações, consulte os <a href="https://www.apple.com/legal/internet-services/itunes/br/terms.html" target="_blank">Termos de Serviço da App Store</a>.</p>
+        <h2>5. Relatórios de falhas (Firebase Crashlytics)</h2>
+        <div class="section-card">
+            <p>O aplicativo utiliza o <strong>Firebase Crashlytics</strong> para identificar e corrigir falhas técnicas. Em caso de crash, são enviados automaticamente dados técnicos sobre o erro (stack trace e versão do app), sem qualquer informação pessoal ou de obras cadastradas.</p>
+        </div>
 
-    <h2>7. Compartilhamento de dados</h2>
-    <p>O Reformei <strong>não vende, aluga ou compartilha</strong> seus dados pessoais com terceiros para fins comerciais. Os dados só são transmitidos aos serviços descritos nesta política (Apple iCloud, Firebase Analytics, Firebase Crashlytics) conforme necessário para o funcionamento do aplicativo.</p>
+        <h2>6. Compras dentro do aplicativo</h2>
+        <div class="section-card">
+            <p>O Reformei oferece assinaturas premium processadas diretamente pela <strong>Apple App Store</strong>. Nenhum dado de pagamento ou cartão de crédito é acessado ou armazenado pelo app. Consulte os <a href="https://www.apple.com/legal/internet-services/itunes/br/terms.html" target="_blank">Termos de Serviço da App Store</a>.</p>
+        </div>
 
-    <h2>8. Retenção e exclusão de dados</h2>
-    <p>Seus dados de obras permanecem armazenados enquanto você utilizar o aplicativo. Para excluir todos os dados:</p>
-    <ul>
-        <li>Exclua o aplicativo do seu dispositivo (remove os dados locais)</li>
-        <li>Acesse iCloud.com e remova os dados do Reformei em Gerenciar Armazenamento</li>
-    </ul>
-    <p>Os dados de análise coletados pelo Firebase são retidos conforme a política de retenção do Google Firebase.</p>
+        <h2>7. Compartilhamento de dados</h2>
+        <div class="section-card">
+            <p>O Reformei <strong>não vende, aluga ou compartilha</strong> seus dados pessoais com terceiros para fins comerciais. Os dados só são transmitidos aos serviços descritos nesta política (Apple iCloud, Firebase Analytics, Firebase Crashlytics) conforme necessário para o funcionamento do aplicativo.</p>
+        </div>
 
-    <h2>9. Segurança</h2>
-    <p>Seus dados são protegidos pela criptografia do iCloud e pelas medidas de segurança da Apple. O acesso ao banco de dados privado do CloudKit é restrito à sua conta Apple ID.</p>
+        <h2>8. Retenção e exclusão de dados</h2>
+        <div class="section-card">
+            <p>Seus dados de obras permanecem armazenados enquanto você utilizar o aplicativo. Para excluir todos os dados:</p>
+            <ul>
+                <li>Exclua o aplicativo do seu dispositivo (remove os dados locais)</li>
+                <li>Acesse iCloud.com e remova os dados do Reformei em Gerenciar Armazenamento</li>
+            </ul>
+            <p>Os dados de análise coletados pelo Firebase são retidos conforme a política de retenção do Google Firebase.</p>
+        </div>
 
-    <h2>10. Crianças</h2>
-    <p>O Reformei não é direcionado a crianças menores de 13 anos e não coleta intencionalmente informações de menores de idade.</p>
+        <h2>9. Segurança</h2>
+        <div class="section-card">
+            <p>Seus dados são protegidos pela criptografia do iCloud e pelas medidas de segurança da Apple. O acesso ao banco de dados privado do CloudKit é restrito à sua conta Apple ID.</p>
+        </div>
 
-    <h2>11. Alterações nesta política</h2>
-    <p>Esta política pode ser atualizada periodicamente. Alterações significativas serão comunicadas por meio de atualização do aplicativo. O uso continuado do app após as alterações implica aceitação da nova política.</p>
+        <h2>10. Crianças</h2>
+        <div class="section-card">
+            <p>O Reformei não é direcionado a crianças menores de 13 anos e não coleta intencionalmente informações de menores de idade.</p>
+        </div>
 
-    <h2>12. Contato</h2>
-    <p>Em caso de dúvidas sobre esta Política de Privacidade, entre em contato:</p>
-    <ul>
-        <li><strong>Desenvolvedor:</strong> Sander Crispim (crispcode)</li>
-        <li><strong>E-mail:</strong> <a href="mailto:adm.crispcode@gmail.com">adm.crispcode@gmail.com</a></li>
-    </ul>
+        <h2>11. Alterações nesta política</h2>
+        <div class="section-card">
+            <p>Esta política pode ser atualizada periodicamente. Alterações significativas serão comunicadas por meio de atualização do aplicativo. O uso continuado do app após as alterações implica aceitação da nova política.</p>
+        </div>
 
-    <hr>
-    <p style="font-size: 13px; color: #8e8e93;">© 2026 crispcode. Todos os direitos reservados.</p>
+        <h2>12. Contato</h2>
+        <div class="section-card">
+            <p>Em caso de dúvidas sobre esta Política de Privacidade, entre em contato:</p>
+            <ul>
+                <li><strong>Desenvolvedor:</strong> Sander Crispim (crispcode)</li>
+                <li><strong>E-mail:</strong> <a href="mailto:adm.crispcode@gmail.com">adm.crispcode@gmail.com</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-logo">Reformei</div>
+        <p>Gerencie suas obras com tranquilidade.</p>
+        <div class="footer-links">
+            <a href="https://scrispim.github.io/crispcode-legal/ReformeiPrivacyPolicy.html">Política de Privacidade</a>
+            <a href="https://scrispim.github.io/crispcode-legal/ReformeiSupport.html">Suporte</a>
+            <a href="mailto:adm.crispcode@gmail.com">Contato</a>
+        </div>
+        <div class="footer-divider"></div>
+        <p class="footer-copy">© 2026 crispcode · Todos os direitos reservados</p>
+    </footer>
 
 </body>
 </html>
